@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "267476187571",
+    "project_id": "decent-trail-384513",
+    "storage_bucket": "decent-trail-384513.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267476187571:android:0529de500a38925bd4b3c6",
+        "android_client_info": {
+          "package_name": "com.example.miniproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267476187571-5moqftp12vh74afkev4j0qipdj8ki5p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtqdloGHUvGRQZRgqKc6ciT1xPxAMMNb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267476187571-5moqftp12vh74afkev4j0qipdj8ki5p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
