@@ -1,5 +1,7 @@
 package com.example.miniproject.Adapter;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.miniproject.AddNewTask;
 import com.example.miniproject.MainActivity;
 import com.example.miniproject.Model.ToDoModel;
 import com.example.miniproject.R;
@@ -35,7 +38,26 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder>{
         firestore = FirebaseFirestore.getInstance();
         return new MyViewHolder(view);
     }
+    public void deleteTask (int position){
+        ToDoModel toDoModel = toDoList.get(position);
+        firestore.collection("task").document(toDoModel.TaskId).delete();
+        notifyItemRemoved(position);
+    }
+    public Context getContext() {
+        return activity;
+    }
+    public void editTask (int position){
+        ToDoModel toDoModel = toDoList.get(position);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("task", toDoModel.getTask());
+        bundle.putString("due",toDoModel.getDue());
+        bundle.putString("id",toDoModel.TaskId);
+
+        AddNewTask addNewTask = new AddNewTask();
+        addNewTask.setArguments(bundle);
+        addNewTask.show(activity.getSupportFragmentManager(), addNewTask.getTag());
+    }
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
