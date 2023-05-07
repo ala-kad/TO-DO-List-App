@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
                         adapter.notifyDataSetChanged();
                     }
                 }
-                //destructing listeRegitration
+                //destructing listenerRegitration
                 listenerRegistration.remove();
             }
         });
